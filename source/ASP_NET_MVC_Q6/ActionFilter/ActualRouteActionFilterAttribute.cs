@@ -36,7 +36,10 @@ namespace ASP_NET_MVC_Q6.ActionFilter
             var area = rd.DataTokens["area"];
             var controller = rd.Values["controller"];
             var action = rd.Values["action"];
-            var OutputString = String.Format("Area: {0} </br> Controller: {1}</br> Action: {2} </br></br></br></br>", area, controller, action);
+            var id = rd.Values["id"];
+            var page = rd.Values["page"];
+            var category = rd.Values["category"];
+            var OutputString = String.Format("Area: {0} </br> Controller: {1}</br> Action: {2} </br> Id: {3}</br> page: {4}</br> category: {5}</br></br></br></br>", area, controller, action,id,page, category);
             output.WriteLine(OutputString.ToString());
         }
     }

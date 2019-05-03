@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
     public class DefaultController : Controller
     {
         // GET: Order/Default
-        public ActionResult List(int? Id)
+        public ActionResult List(int? page)
         {
             string controller = RouteData.Values["controller"] as string;
             string action = RouteData.Values["action"] as string;
@@ -18,7 +18,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
             ViewBag.area = area;
             ViewBag.controller = controller;
             ViewBag.action = action;
-            ViewBag.Id = Id.ToString();
+            ViewBag.page = page.ToString();
 
             return View();
         }

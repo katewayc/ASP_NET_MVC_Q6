@@ -93,6 +93,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Order\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Order\OrderAreaRegistration.cs" />
+    <Compile Include="Areas\Product\Controllers\MainController.cs" />
+    <Compile Include="Areas\Product\ProductAreaRegistration.cs" />
+    <Compile Include="Areas\Ticket\Controllers\MainController.cs" />
+    <Compile Include="Areas\Ticket\TicketAreaRegistration.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,7 +108,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Areas\Order\Views\web.config" />
+    <Content Include="Areas\Order\Views\Default\List.cshtml" />
+    <Content Include="Areas\Order\Views\Default\Detail.cshtml" />
+    <Content Include="Areas\Ticket\Views\web.config" />
+    <Content Include="Areas\Ticket\Views\Main\List.cshtml" />
+    <Content Include="Areas\Ticket\Views\Main\Detail.cshtml" />
+    <Content Include="Areas\Product\Views\web.config" />
+    <Content Include="Areas\Product\Views\Main\List.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\Default\Login.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Home\ContactMe.cshtml" />
+    <Content Include="Views\Default\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,7 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Areas\Order\Models\" />
+    <Folder Include="Areas\Order\Views\Shared\" />
+    <Folder Include="Areas\Product\Models\" />
+    <Folder Include="Areas\Product\Views\Shared\" />
+    <Folder Include="Areas\Ticket\Models\" />
+    <Folder Include="Areas\Ticket\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

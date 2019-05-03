@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP_NET_MVC_Q6.ActionFilter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Order/Default
+        [ActualRouteActionFilter]
         public ActionResult List(int? page)
         {
             string controller = RouteData.Values["controller"] as string;
@@ -23,6 +24,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
             return View();
         }
 
+        [ActualRouteActionFilter]
         public ActionResult Detail(int? Id)
         {
             string controller = RouteData.Values["controller"] as string;

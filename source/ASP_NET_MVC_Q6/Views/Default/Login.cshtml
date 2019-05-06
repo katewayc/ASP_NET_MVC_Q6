@@ -1,4 +1,4 @@
-﻿
+﻿@model ASP_NET_MVC_Q6.Models.RouteDataValues
 @{
     Layout = null;
 }
@@ -11,8 +11,8 @@
     <title>Login</title>
 </head>
 <body>
-    <div> 
-        <span>/@ViewBag.controller/@ViewBag.action</span>
+    <div>
+        <span>/@Model.RouteController/@Model.RouteAction</span>
     </div>
 </body>
 </html>

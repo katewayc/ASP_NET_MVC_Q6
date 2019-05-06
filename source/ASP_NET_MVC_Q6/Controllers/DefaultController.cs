@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ASP_NET_MVC_Q6.ActionFilter;
+using ASP_NET_MVC_Q6.Models;
 
 namespace ASP_NET_MVC_Q6.Controllers
 {
@@ -12,13 +13,13 @@ namespace ASP_NET_MVC_Q6.Controllers
         [ActualRoute]
         public ActionResult Login()
         {
-            string controller = RouteData.Values["controller"] as string;
-            string action = RouteData.Values["action"] as string;
+            RouteDataValues routeDataValues = new RouteDataValues();
 
-            ViewBag.controller = controller;
-            ViewBag.action = action;
+            routeDataValues = ViewData["RouteDataValues"] as RouteDataValues;
 
-            return View();
+
+
+            return View(routeDataValues);
         }
 
         [ActualRoute]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP_NET_MVC_Q6.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,12 +11,20 @@ namespace ASP_NET_MVC_Q6.ActionFilter
 {
     public class ActualRouteAttribute : ActionFilterAttribute
     {
-        private HttpWriter output;
-
-        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            output = (HttpWriter)filterContext.RequestContext.HttpContext.Response.Output;
-            SetOutputString(filterContext.RouteData);
+            RouteDataValues routeDataValues = new RouteDataValues();
+
+            routeDataValues.RouteArea = filterContext.RouteData.DataTokens["area"] as string;
+            routeDataValues.RouteController = filterContext.RouteData.Values["controller"] as string;
+            routeDataValues.RouteAction = filterContext.RouteData.Values["action"] as string;
+            routeDataValues.RoutePage = filterContext.RouteData.Values["page"] as string;
+            routeDataValues.RouteId = filterContext.RouteData.Values["id"] as string;
+            routeDataValues.RouteCategory = filterContext.RouteData.Values["category"] as string;
+
+            filterContext.Controller.ViewData["RouteDataValues"] = routeDataValues;
+
+            //SetOutputString(filterContext.RouteData);
         }
 
 
@@ -27,10 +36,9 @@ namespace ASP_NET_MVC_Q6.ActionFilter
             {
                 if (key == "area")
                 {
-                    result += key + ": " + rd.DataTokens[key]  +"<br/>";
+                    result += key + ": " + rd.DataTokens[key] + "<br/>";
                 }
             }
-
 
             foreach (String key in rd.Values.Keys)
             {
@@ -38,7 +46,6 @@ namespace ASP_NET_MVC_Q6.ActionFilter
             }
 
             result += @"</br></br></br></br>";
-            output.WriteLine(result);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Web.Routing;
 
 namespace ASP_NET_MVC_Q6.ActionFilter
 {
-    public class ActualRouteActionFilterAttribute : ActionFilterAttribute
+    public class ActualRouteAttribute : ActionFilterAttribute
     {
         private HttpWriter output;
 
@@ -23,14 +23,21 @@ namespace ASP_NET_MVC_Q6.ActionFilter
         {
             string result = "";
 
-            result+= rd.DataTokens["area"] ?? "";
+            foreach (String key in rd.DataTokens.Keys)
+            {
+                if (key == "area")
+                {
+                    result += key + ": " + rd.DataTokens[key]  +"<br/>";
+                }
+            }
+
 
             foreach (String key in rd.Values.Keys)
             {
-                result += key+": "+ rd.Values[key] + ", ";
+                result += key + ": " + rd.Values[key] + "<br/>";
             }
 
-            result += @" </br> </br> </br> </br>";
+            result += @"</br></br></br></br>";
             output.WriteLine(result);
         }
     }

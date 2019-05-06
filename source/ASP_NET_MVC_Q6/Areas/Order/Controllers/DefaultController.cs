@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
 {
     public class DefaultController : Controller
     {
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult List(int? page)
         {
             string controller = RouteData.Values["controller"] as string;
@@ -24,7 +24,7 @@ namespace ASP_NET_MVC_Q6.Areas.Order.Controllers
             return View();
         }
 
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult Detail(int? Id)
         {
             string controller = RouteData.Values["controller"] as string;

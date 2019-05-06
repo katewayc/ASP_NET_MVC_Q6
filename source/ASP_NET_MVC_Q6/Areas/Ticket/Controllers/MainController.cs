@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Areas.Ticket.Controllers
 {
     public class MainController : Controller
     {
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult List()
         {
             string controller = RouteData.Values["controller"] as string;
@@ -23,7 +23,7 @@ namespace ASP_NET_MVC_Q6.Areas.Ticket.Controllers
             return View();
         }
 
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult Detail(int? Id)
         {
             string controller = RouteData.Values["controller"] as string;

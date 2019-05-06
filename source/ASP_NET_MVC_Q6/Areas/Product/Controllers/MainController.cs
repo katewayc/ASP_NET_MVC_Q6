@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Areas.Product.Controllers
 {
     public class MainController : Controller
     {
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult List(string category)
         {
             string controller = RouteData.Values["controller"] as string;

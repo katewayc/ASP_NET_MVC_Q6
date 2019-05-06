@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Controllers
 {
     public class DefaultController : Controller
     {
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult Login()
         {
             string controller = RouteData.Values["controller"] as string;
@@ -21,7 +21,7 @@ namespace ASP_NET_MVC_Q6.Controllers
             return View();
         }
 
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult List()
         {
             string controller = RouteData.Values["controller"] as string;

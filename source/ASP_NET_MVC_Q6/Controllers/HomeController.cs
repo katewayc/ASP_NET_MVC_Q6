@@ -9,7 +9,7 @@ namespace ASP_NET_MVC_Q6.Controllers
 {
     public class HomeController : Controller
     {
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult Welcome()
         {
             string controller = RouteData.Values["controller"] as string;
@@ -21,7 +21,7 @@ namespace ASP_NET_MVC_Q6.Controllers
             return View();
         }
 
-        [ActualRouteActionFilter]
+        [ActualRoute]
         public ActionResult ContactMe()
         {
             string controller = RouteData.Values["controller"] as string;

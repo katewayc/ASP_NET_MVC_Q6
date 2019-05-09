@@ -1,4 +1,4 @@
-﻿
+﻿@model ASP_NET_MVC_Q6.Models.RouteDataValues
 @{
     Layout = null;
 }
@@ -12,7 +12,7 @@
 </head>
 <body>
     <div>
-        <span>/@ViewBag.area/@ViewBag.controller/@ViewBag.action</span>
+        <span>/@Model.Area/@Model.Controller/@Model.Action</span>
     </div>
 </body>
 </html>

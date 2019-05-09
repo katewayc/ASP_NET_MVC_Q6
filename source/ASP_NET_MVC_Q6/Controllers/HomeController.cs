@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ASP_NET_MVC_Q6.Models;
 
 namespace ASP_NET_MVC_Q6.Controllers
 {
@@ -12,25 +13,19 @@ namespace ASP_NET_MVC_Q6.Controllers
         [ActualRoute]
         public ActionResult Welcome()
         {
-            string controller = RouteData.Values["controller"] as string;
-            string action = RouteData.Values["action"] as string;
+            RouteDataValues route = new RouteDataValues();
+            route = ViewData["RouteDataValues"] as RouteDataValues;
 
-            ViewBag.controller = controller;
-            ViewBag.action = action;
-
-            return View();
+            return View(route);
         }
 
         [ActualRoute]
         public ActionResult ContactMe()
         {
-            string controller = RouteData.Values["controller"] as string;
-            string action = RouteData.Values["action"] as string;
+            RouteDataValues route = new RouteDataValues();
+            route = ViewData["RouteDataValues"] as RouteDataValues;
 
-            ViewBag.controller = controller;
-            ViewBag.action = action;
-
-            return View();
+            return View(route);
         }
     }
 }

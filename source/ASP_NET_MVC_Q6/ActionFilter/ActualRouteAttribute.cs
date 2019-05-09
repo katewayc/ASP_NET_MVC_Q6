@@ -13,23 +13,23 @@ namespace ASP_NET_MVC_Q6.ActionFilter
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            RouteDataValues routeDataValues = new RouteDataValues();
+            RouteDataValues route = new RouteDataValues();
 
-            routeDataValues.RouteArea = filterContext.RouteData.DataTokens["area"] as string;
-            routeDataValues.RouteController = filterContext.RouteData.Values["controller"] as string;
-            routeDataValues.RouteAction = filterContext.RouteData.Values["action"] as string;
-            routeDataValues.RoutePage = filterContext.RouteData.Values["page"] as string;
-            routeDataValues.RouteId = filterContext.RouteData.Values["id"] as string;
-            routeDataValues.RouteCategory = filterContext.RouteData.Values["category"] as string;
+            route.Area = filterContext.RouteData.DataTokens["area"] as string;
+            route.Controller = filterContext.RouteData.Values["controller"] as string;
+            route.Action = filterContext.RouteData.Values["action"] as string;
+            route.Page = filterContext.RouteData.Values["page"] as string;
+            route.Id = filterContext.RouteData.Values["id"] as string;
+            route.Category = filterContext.RouteData.Values["category"] as string;
 
-            filterContext.Controller.ViewData["RouteDataValues"] = routeDataValues;
+            filterContext.Controller.ViewData["RouteDataValues"] = route;
 
             //SetOutputString(filterContext.RouteData);
         }
 
 
         private void SetOutputString(RouteData rd)
-        {
+        { 
             string result = "";
 
             foreach (String key in rd.DataTokens.Keys)

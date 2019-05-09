@@ -13,25 +13,19 @@ namespace ASP_NET_MVC_Q6.Controllers
         [ActualRoute]
         public ActionResult Login()
         {
-            RouteDataValues routeDataValues = new RouteDataValues();
+            RouteDataValues route = new RouteDataValues();
+            route = ViewData["RouteDataValues"] as RouteDataValues;
 
-            routeDataValues = ViewData["RouteDataValues"] as RouteDataValues;
-
-
-
-            return View(routeDataValues);
+            return View(route);
         }
 
         [ActualRoute]
         public ActionResult List()
         {
-            string controller = RouteData.Values["controller"] as string;
-            string action = RouteData.Values["action"] as string;
+            RouteDataValues route = new RouteDataValues();
+            route = ViewData["RouteDataValues"] as RouteDataValues;
 
-            ViewBag.controller = controller;
-            ViewBag.action = action;
-
-            return View();
+            return View(route);
         }
     }
 }

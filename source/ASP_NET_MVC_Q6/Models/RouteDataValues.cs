@@ -7,11 +7,11 @@ namespace ASP_NET_MVC_Q6.Models
 {
     public class RouteDataValues
     {
-        public string RouteArea { get; set; }
-        public string RouteController { get; set; }
-        public string RouteAction { get; set; }
-        public string RoutePage { get; set; }
-        public string RouteId { get; set; }
-        public string RouteCategory { get; set; }
+        public string Area { get; set; }
+        public string Controller { get; set; }
+        public string Action { get; set; }
+        public string Page { get; set; }
+        public string Id { get; set; }
+        public string Category { get; set; }
     }
 }

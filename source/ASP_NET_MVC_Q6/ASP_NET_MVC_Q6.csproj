@@ -132,12 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Order\Models\" />
-    <Folder Include="Areas\Order\Views\Shared\" />
-    <Folder Include="Areas\Product\Models\" />
-    <Folder Include="Areas\Product\Views\Shared\" />
-    <Folder Include="Areas\Ticket\Models\" />
-    <Folder Include="Areas\Ticket\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

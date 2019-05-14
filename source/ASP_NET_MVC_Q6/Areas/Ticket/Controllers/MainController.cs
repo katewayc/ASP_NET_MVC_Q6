@@ -8,9 +8,9 @@ using ASP_NET_MVC_Q6.Models;
 
 namespace ASP_NET_MVC_Q6.Areas.Ticket.Controllers
 {
+    [ActualRoute]
     public class MainController : Controller
     {
-        [ActualRoute]
         public ActionResult List()
         {
             RouteDataValues route = new RouteDataValues();
@@ -19,7 +19,6 @@ namespace ASP_NET_MVC_Q6.Areas.Ticket.Controllers
             return View(route);
         }
 
-        [ActualRoute]
         public ActionResult Detail(int? Id)
         {
             RouteDataValues route = new RouteDataValues();

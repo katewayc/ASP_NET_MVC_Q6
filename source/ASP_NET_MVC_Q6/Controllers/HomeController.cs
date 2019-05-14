@@ -8,9 +8,10 @@ using ASP_NET_MVC_Q6.Models;
 
 namespace ASP_NET_MVC_Q6.Controllers
 {
+    [ActualRoute]
     public class HomeController : Controller
     {
-        [ActualRoute]
+
         public ActionResult Welcome()
         {
             RouteDataValues route = new RouteDataValues();
@@ -19,7 +20,6 @@ namespace ASP_NET_MVC_Q6.Controllers
             return View(route);
         }
 
-        [ActualRoute]
         public ActionResult ContactMe()
         {
             RouteDataValues route = new RouteDataValues();

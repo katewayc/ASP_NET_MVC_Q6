@@ -8,9 +8,9 @@ using ASP_NET_MVC_Q6.Models;
 
 namespace ASP_NET_MVC_Q6.Areas.Product.Controllers
 {
+    [ActualRoute]
     public class MainController : Controller
     {
-        [ActualRoute]
         public ActionResult List(string category)
         {
             RouteDataValues route = new RouteDataValues();
